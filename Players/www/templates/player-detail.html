@@ -1,0 +1,30 @@
+<ion-view view-title="{{player.name}}">
+
+    <ion-content class="padding">
+        <button class="ion-plus-round" ng-show="!isEditing" ng-click="new()"></button>
+        <button class="ion-ios-cloud-upload-outline" ng-show="isEditing" ng-click="add()"></button>
+        <button class="ion-trash-a" ng-show="!isEditing" ng-click="remove()"></button>
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Name</span>
+                <input type="text" ng-keyup="isEditing=true;" placeholder="{{player.name}}" ng-model="player.name">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Comments</span>
+                <input type="text" ng-keyup="isEditing=true;" placeholder="{{player.comments}}" ng-model="player.comments">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Email</span>
+                <input type="email" ng-keyup="isEditing=true;" placeholder="{{player.email}}" ng-model="player.email">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Salary</span>
+                <input type="text" ng-keyup="isEditing=true;" placeholder="{{player.salary | currency}}" ng-model="player.salary">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Sign Date</span>
+                <input type="text" ng-keyup="isEditing=true;" placeholder="{{player.signdate | date}}" ng-model="player.signdate">
+            </label>
+        </div>
+    </ion-content>
+</ion-view>
